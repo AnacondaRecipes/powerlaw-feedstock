@@ -2,22 +2,24 @@
 {% set version = "1.4.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "7f9d9cb39ad23af8f6cae165d47020ee8b7fa58f380c356de91ae2625577699e"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 7f9d9cb39ad23af8f6cae165d47020ee8b7fa58f380c356de91ae2625577699e
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - pip
     - python
+    - setuptools
+    - wheel
   run:
     - matplotlib-base
     - mpmath
@@ -29,12 +31,15 @@ test:
     - powerlaw
 
 about:
-  home: "http://www.github.com/jeffalstott/powerlaw"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: "powerlaw.py" 
-  summary: "Toolbox for testing if a probability distribution fits a power law"
-  
+  home: http://www.github.com/jeffalstott/powerlaw
+  license: MIT
+  license_family: MIT
+  license_file: powerlaw.py
+  description: |
+    powerlaw is a toolbox using the statistical methods developed in
+    Clauset et al. 2007 and Klaus et al. 2011 to determine if a probability
+    distribution fits a power law.
+  summary: Toolbox for testing if a probability distribution fits a power law
 
 extra:
   recipe-maintainers:
