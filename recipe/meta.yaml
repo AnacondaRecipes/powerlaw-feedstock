@@ -43,7 +43,9 @@ about:
     Clauset et al. 2007 and Klaus et al. 2011 to determine if a probability
     distribution fits a power law.
   summary: Toolbox for testing if a probability distribution fits a power law
-  doc_url: https://www.github.com/jeffalstott/powerlaw
+  doc_url: https://github.com/jeffalstott/powerlaw/blob/master/README.rst
+  dev_url: https://www.github.com/jeffalstott/powerlaw
+
 extra:
   recipe-maintainers:
     - jaidevjoshi83
