@@ -34,7 +34,7 @@ test:
     - pip
 
 about:
-  home: https://www.github.com/jeffalstott/powerlaw
+  home: https://github.com/jeffalstott/powerlaw
   license: MIT
   license_family: MIT
   license_file: powerlaw.py
