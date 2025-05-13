@@ -10,7 +10,7 @@ source:
   sha256: 7f9d9cb39ad23af8f6cae165d47020ee8b7fa58f380c356de91ae2625577699e
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - numpy
     - python
     - scipy
+
 test:
   imports:
     - powerlaw
